@@ -1,3 +1,56 @@
-<p>
-  teams-generator works!
-</p>
+<div>
+  Choose players to generate teams from:
+
+  <table *ngIf="figures && figures.length!=0">
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Native language</th>
+        <th>Tick</th>
+      </tr>
+  
+      <tr *ngFor="let figure of figures">
+        <td>{{figure.id}}</td>
+        <td>{{figure.firstName}} {{figure.lastName}}</td>
+        <td>{{figure.nativeLanguage}}</td>
+        <td>
+            <input type="checkbox"
+            [checked]="figure.isChosen" (change)="figure.isChosen = !figure.isChosen">
+        </td>
+      </tr>
+  
+    </table>
+
+    Liczba graczy: {{getPlayersNoCount()}}
+
+    <label>Number of teams:
+      <input [(ngModel)]="numberOfTeams" (input)="clicked = false"/>
+      </label>
+
+      <button (click)="getGeneratedTeams()">Generate teams</button>
+      <p *ngIf=" clicked && !verified">Number of teams is not correct!</p>
+      <p *ngIf="verified">Teams generated!</p>
+
+
+      <table *ngFor="let team of teams">
+        <tr>Team {{team.id}}</tr>  
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Native language</th>
+          </tr>
+      
+          <tr *ngFor="let member of team.members">
+            <td>{{member.id}}</td>
+            <td>{{member.firstName}} {{member.lastName}}</td>
+            <td>{{member.nativeLanguage}}</td>
+          </tr>
+      
+        </table>
+
+      <button *ngIf="verified" (click)="saveTeams()">Accept teams</button>
+
+      <button *ngIf="verified" routerLink="/home">Go back to choose games</button>
+
+
+</div>

@@ -1,0 +1,44 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "members": [
+        {
+          "id": 4,
+          "firstName": "Alicja",
+          "lastName": "Weber",
+          "nativeLanguage": "polish",
+          "isChosen": true
+        },
+        {
+          "id": 6,
+          "firstName": "Tilo",
+          "lastName": "Weber",
+          "nativeLanguage": "german",
+          "isChosen": true
+        }
+      ],
+      "score": 0
+    },
+    {
+      "id": 2,
+      "members": [
+        {
+          "id": 3,
+          "firstName": "Adrianna",
+          "lastName": "Weber",
+          "nativeLanguage": "german",
+          "isChosen": true
+        },
+        {
+          "id": 7,
+          "firstName": "Wolfgang",
+          "lastName": "Strauss",
+          "nativeLanguage": "german",
+          "isChosen": true
+        }
+      ],
+      "score": 0
+    }
+  ]
+}
